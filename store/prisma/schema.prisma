@@ -1,0 +1,23 @@
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//A productunk táblája amit elfogunk adni
+model Product {
+  id           String     @id @default(uuid())
+  name        String
+  company     String
+  description String
+  featured   Boolean
+  image       String //url
+  price       Int
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  clerkId  String //egy Authentikációs ID
+}
