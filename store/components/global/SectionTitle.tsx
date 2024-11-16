@@ -1,5 +1,14 @@
-function SectionTitle() {
-  return <div>SectionTitle</div>;
+import { Separator } from "@/components/ui/separator";
+
+function SectionTitle({ text }: { text: String }) {
+  return (
+    <div>
+      <h2 className="text-3xl font-medium tracking-wider capitalize mb-8">
+        {text}
+        <Separator />
+      </h2>
+    </div>
+  );
 }
 
 export default SectionTitle;
